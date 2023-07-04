@@ -13,24 +13,35 @@ Buon lavoro e buon divertimento! */
 for(i=1; i<=100; i++){
     console.log(i);
 
-    if(i % 3 == 0){
+    if(i % 3 == 0 && i % 5 == 0){
+        document.getElementById("containerSquare").innerHTML += `
+            <div class="square_orange">
+                <p class="text-center text-white fs-3 fw-3 vertical-align-square">FizzBuzz</p>
+            <div>
+        `
+        console.log(i + " Divisibile da 3 e 5");
+    } else if (i % 3 == 0){
         document.getElementById("containerSquare").innerHTML += `
             <div class="square_red">
                 <p class="text-center text-white fs-3 fw-3 vertical-align-square">Fizz</p>
             <div>
-        `;
+        `
+        console.log(i + " Divisibile solo da 3");
     } else if (i % 5 == 0){
         document.getElementById("containerSquare").innerHTML += `
             <div class="square_green">
                 <p class="text-center text-white fs-3 fw-3 vertical-align-square">Buzz</p>
             <div>
-        `;
-    } else {
+        `
+        console.log(i + " Divisibile solo da 5");
+    }  
+    else {
         document.getElementById("containerSquare").innerHTML += `
             <div class="square_blue">
                 <p class="text-center text-white fs-3 fw-3 vertical-align-square">${i}</p>
             <div>
-        `;
+        `
+        console.log(i + " Non divisibile da 3 o 5");
     }
 
 }
